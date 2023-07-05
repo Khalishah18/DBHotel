@@ -31,6 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.dataStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataTamuHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataKamarHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataJasaHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,12 +53,48 @@
             // 
             // toolStripDropDownButton1
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dataStaffToolStripMenuItem,
+            this.dataTamuHotelToolStripMenuItem,
+            this.dataKamarHotelToolStripMenuItem,
+            this.dataJasaHotelToolStripMenuItem,
+            this.dataHotelToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(34, 24);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(60, 24);
+            this.toolStripDropDownButton1.Text = "Menu";
+            // 
+            // dataStaffToolStripMenuItem
+            // 
+            this.dataStaffToolStripMenuItem.Name = "dataStaffToolStripMenuItem";
+            this.dataStaffToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataStaffToolStripMenuItem.Text = "Data Staff Hotel";
+            // 
+            // dataTamuHotelToolStripMenuItem
+            // 
+            this.dataTamuHotelToolStripMenuItem.Name = "dataTamuHotelToolStripMenuItem";
+            this.dataTamuHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataTamuHotelToolStripMenuItem.Text = "Data Tamu Hotel";
+            // 
+            // dataKamarHotelToolStripMenuItem
+            // 
+            this.dataKamarHotelToolStripMenuItem.Name = "dataKamarHotelToolStripMenuItem";
+            this.dataKamarHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataKamarHotelToolStripMenuItem.Text = "Data Kamar Hotel";
+            // 
+            // dataJasaHotelToolStripMenuItem
+            // 
+            this.dataJasaHotelToolStripMenuItem.Name = "dataJasaHotelToolStripMenuItem";
+            this.dataJasaHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataJasaHotelToolStripMenuItem.Text = "Data Jasa Hotel";
+            // 
+            // dataHotelToolStripMenuItem
+            // 
+            this.dataHotelToolStripMenuItem.Name = "dataHotelToolStripMenuItem";
+            this.dataHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataHotelToolStripMenuItem.Text = "Data Hotel";
             // 
             // Form1
             // 
@@ -74,6 +115,11 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem dataStaffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataTamuHotelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataKamarHotelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataJasaHotelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataHotelToolStripMenuItem;
     }
 }
 
