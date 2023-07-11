@@ -92,7 +92,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtPosisiStaff, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtNohpStaff, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtidhtl, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(332, 347);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(185, 347);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.27273F));
@@ -100,7 +100,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(396, 214);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(659, 214);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label2
@@ -109,7 +109,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 16);
+            this.label2.Size = new System.Drawing.Size(263, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Id Staff";
             // 
@@ -119,7 +119,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 16);
+            this.label3.Size = new System.Drawing.Size(263, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Nama Staff";
             // 
@@ -129,7 +129,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 16);
+            this.label4.Size = new System.Drawing.Size(263, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "Posisi Staff";
             // 
@@ -139,7 +139,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(3, 139);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 16);
+            this.label5.Size = new System.Drawing.Size(263, 16);
             this.label5.TabIndex = 3;
             this.label5.Text = "Nomor Handphone";
             // 
@@ -149,48 +149,48 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 184);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 16);
+            this.label6.Size = new System.Drawing.Size(263, 16);
             this.label6.TabIndex = 4;
             this.label6.Text = "Id Hotel";
             // 
             // txtIdStaff
             // 
             this.txtIdStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdStaff.Location = new System.Drawing.Point(164, 10);
+            this.txtIdStaff.Location = new System.Drawing.Point(272, 10);
             this.txtIdStaff.Name = "txtIdStaff";
-            this.txtIdStaff.Size = new System.Drawing.Size(229, 22);
+            this.txtIdStaff.Size = new System.Drawing.Size(384, 22);
             this.txtIdStaff.TabIndex = 5;
             // 
             // txtnmStaff
             // 
             this.txtnmStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtnmStaff.Location = new System.Drawing.Point(164, 54);
+            this.txtnmStaff.Location = new System.Drawing.Point(272, 54);
             this.txtnmStaff.Name = "txtnmStaff";
-            this.txtnmStaff.Size = new System.Drawing.Size(229, 22);
+            this.txtnmStaff.Size = new System.Drawing.Size(384, 22);
             this.txtnmStaff.TabIndex = 6;
             // 
             // txtPosisiStaff
             // 
             this.txtPosisiStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPosisiStaff.Location = new System.Drawing.Point(164, 95);
+            this.txtPosisiStaff.Location = new System.Drawing.Point(272, 95);
             this.txtPosisiStaff.Name = "txtPosisiStaff";
-            this.txtPosisiStaff.Size = new System.Drawing.Size(229, 22);
+            this.txtPosisiStaff.Size = new System.Drawing.Size(384, 22);
             this.txtPosisiStaff.TabIndex = 7;
             // 
             // txtNohpStaff
             // 
             this.txtNohpStaff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNohpStaff.Location = new System.Drawing.Point(164, 136);
+            this.txtNohpStaff.Location = new System.Drawing.Point(272, 136);
             this.txtNohpStaff.Name = "txtNohpStaff";
-            this.txtNohpStaff.Size = new System.Drawing.Size(229, 22);
+            this.txtNohpStaff.Size = new System.Drawing.Size(384, 22);
             this.txtNohpStaff.TabIndex = 8;
             // 
             // txtidhtl
             // 
             this.txtidhtl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtidhtl.Location = new System.Drawing.Point(164, 181);
+            this.txtidhtl.Location = new System.Drawing.Point(272, 181);
             this.txtidhtl.Name = "txtidhtl";
-            this.txtidhtl.Size = new System.Drawing.Size(229, 22);
+            this.txtidhtl.Size = new System.Drawing.Size(384, 22);
             this.txtidhtl.TabIndex = 9;
             // 
             // bindingNavigator1
@@ -331,7 +331,7 @@
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(332, 606);
+            this.btnadd.Location = new System.Drawing.Point(207, 592);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(75, 23);
             this.btnadd.TabIndex = 5;
@@ -341,7 +341,7 @@
             // 
             // btnsave
             // 
-            this.btnsave.Location = new System.Drawing.Point(496, 606);
+            this.btnsave.Location = new System.Drawing.Point(466, 592);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(75, 23);
             this.btnsave.TabIndex = 6;
@@ -350,7 +350,7 @@
             // 
             // btnclear
             // 
-            this.btnclear.Location = new System.Drawing.Point(650, 606);
+            this.btnclear.Location = new System.Drawing.Point(703, 592);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(75, 23);
             this.btnclear.TabIndex = 7;
