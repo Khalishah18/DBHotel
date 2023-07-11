@@ -51,7 +51,7 @@ namespace DBHotel
 
         private void dataJasaHotelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form5 js = new Form5();
+            btnBack js = new btnBack();
             js.Show();
             this.Hide();
         }

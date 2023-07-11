@@ -127,5 +127,15 @@ namespace DBHotel
             hu.Show();
             this.Hide();
         }
+
+        private void bindingNavigator1_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
