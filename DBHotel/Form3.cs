@@ -25,7 +25,7 @@ namespace DBHotel
         private void dataGridView()
         {
             koneksi.Open();
-            string str = "select id_tamu, nm_tamu, nohp, alamat, email, id_staff from dbo.Tamu";
+            string str = "select Id_Tamu,Nama_Tamu,No_Hp,Alamat,Email,Id_Staff from dbo.Tamu";
             SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -114,15 +114,15 @@ namespace DBHotel
             else
             {
                 koneksi.Open();
-                string str = "INSERT INTO Tamu (id_tamu, nm_tamu, nohp, alamat, email, id_staff) VALUES (@id_tamu, @nm_tamu, @nohp, @alamat, @email, @id_staff)";
+                string str = "INSERT INTO Tamu (Id_Tamu,Nama_Tamu,No_Hp,Alamat,Email,Id_Staff) VALUES (@Id_Tamu,@Nama_Tamu,@No_Hp,@Alamat,@Email,@Id_Staff)";
                 SqlCommand cmd = new SqlCommand(str, koneksi);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add(new SqlParameter("@id_tamu", idtamu));
-                cmd.Parameters.Add(new SqlParameter("@nm_tamu", nm));
-                cmd.Parameters.Add(new SqlParameter("@nohp", nohp));
-                cmd.Parameters.Add(new SqlParameter("@alamat", almt));
-                cmd.Parameters.Add(new SqlParameter("@email", email));
-                cmd.Parameters.Add(new SqlParameter("@id_staff", idstaff));
+                cmd.Parameters.Add(new SqlParameter("@Id_Tamu", idtamu));
+                cmd.Parameters.Add(new SqlParameter("@Nama_Tamu", nm));
+                cmd.Parameters.Add(new SqlParameter("@No_Hp", nohp));
+                cmd.Parameters.Add(new SqlParameter("@Alamat", almt));
+                cmd.Parameters.Add(new SqlParameter("@Email", email));
+                cmd.Parameters.Add(new SqlParameter("@Id_Staff", idstaff));
                 cmd.ExecuteNonQuery();
                 koneksi.Close();
                 MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -147,6 +147,37 @@ namespace DBHotel
             Form1 hu = new Form1();
             hu.Show();
             this.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    string Nama_Tamu = dataGridView1.SelectedRows[0].Cells["Nama_Tamu"].Value.ToString();
+
+                    koneksi.Open();
+                    string str = "DELETE FROM dbo.Hotel WHERE Nama_Tamu = @Nama_Tamu";
+                    SqlCommand cmd = new SqlCommand(str, koneksi);
+                    cmd.Parameters.AddWithValue("@Nama_Hotel", Nama_Tamu);
+                    cmd.ExecuteNonQuery();
+                    koneksi.Close();
+
+                    MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridView();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pilih baris data yang ingin dihapus", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

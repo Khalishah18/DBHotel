@@ -16,8 +16,6 @@ namespace DBHotel
         private string stringConnection = "data source=LAPTOP-67G15PD7\\LISAA;" + "database=DBHotel; User ID = sa; Password = Lisa18062003";
         private SqlConnection koneksi;
 
-        private string idhtl, nmhtl, almt, notelp;
-
         public Form6()
         {
             InitializeComponent();
@@ -33,21 +31,21 @@ namespace DBHotel
 
             if (idhtl == "")
             {
-                MessageBox.Show("Masukkan ID Tamu", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Masukkan ID Hotel", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             if (nmhtl == "")
             {
-                MessageBox.Show("Masukkan Nama Tamu", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Masukkan Nama Hotel", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             if (almt == "")
             {
-                MessageBox.Show("Masukkan Alamat", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Masukkan Alamat Hotel", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             if (notelp == "")
             {
-                MessageBox.Show("Masukkan Email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Masukkan Nomor Telephone", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             else

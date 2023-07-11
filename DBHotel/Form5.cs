@@ -15,10 +15,6 @@ namespace DBHotel
     {
         private string stringConnection = "data source=LAPTOP-67G15PD7\\LISAA;" + "database=DBHotel; User ID = sa; Password = Lisa18062003";
         private SqlConnection koneksi;
-
-        private string Id_Jasa, Nama_Jasa, Harga_Jasa, Id_Kamar;
-        BindingSource customersBindingSource = new BindingSource();
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtIdJasa.Text = "";
@@ -40,19 +36,19 @@ namespace DBHotel
             string HargaJasa = txtHrgJasa.Text;
             string IdKamar = txtIdkmr.Text;
 
-            if (Id_Jasa == "")
+            if (IdJasa == "")
             {
                 MessageBox.Show("Masukkan Id Jasa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (Nama_Jasa == "")
+            if (NamaJasa == "")
             {
                 MessageBox.Show("Masukkan Nama Jasa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (Harga_Jasa == "")
+            if (HargaJasa == "")
             {
                 MessageBox.Show("Masukkan Harga Jasa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (Id_Kamar == "")
+            if (IdKamar == "")
             {
                 MessageBox.Show("Masukkan Id Kamar", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -62,10 +58,10 @@ namespace DBHotel
                 string str = "INSERT INTO Jasa(Id_Jasa, Nama_Jasa, Harga_Jasa, Id_Kamar) VALUES (@Id_Jasa, @Nama_Jasa, @Harga_Jasa, @Id_Kamar)";
                 SqlCommand cmd = new SqlCommand(str, koneksi);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add(new SqlParameter("@Id_Jasa", Id_Jasa));
-                cmd.Parameters.Add(new SqlParameter(" @Nama_Jasa", Nama_Jasa));
-                cmd.Parameters.Add(new SqlParameter("@Harga_Jasa", Harga_Jasa));
-                cmd.Parameters.Add(new SqlParameter("@Id_Kamar", Id_Kamar));
+                cmd.Parameters.Add(new SqlParameter("@Id_Jasa", IdJasa));
+                cmd.Parameters.Add(new SqlParameter(" @Nama_Jasa", NamaJasa));
+                cmd.Parameters.Add(new SqlParameter("@Harga_Jasa", HargaJasa));
+                cmd.Parameters.Add(new SqlParameter("@Id_Kamar", IdKamar));
                 cmd.ExecuteNonQuery();
 
                 koneksi.Close();

@@ -16,8 +16,6 @@ namespace DBHotel
         private string stringConnection = "data source=LAPTOP-67G15PD7\\LISAA;" + "database=DBHotel; User ID = sa; Password = Lisa18062003";
         private SqlConnection koneksi;
 
-        private string Id_Kamar, Jenis_Kamar, Status_Kamar, Fasilitas_Kamar, Id_Tamu;
-
         private void btnback_Click(object sender, EventArgs e)
         {
             Form1 hu = new Form1();
