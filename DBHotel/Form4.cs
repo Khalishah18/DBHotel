@@ -28,7 +28,7 @@ namespace DBHotel
         private void btnopen_Click(object sender, EventArgs e)
         {
             dataGridView();
-          
+
         }
 
         BindingSource customersBindingSource = new BindingSource();
@@ -130,24 +130,6 @@ namespace DBHotel
                 refreshform();
             }
 
-        private void btnclear_Click(object sender, EventArgs e)
-        {
-            refreshform();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbIdTamu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridView()
@@ -160,7 +142,7 @@ namespace DBHotel
             dataGridView1.DataSource = ds.Tables[0];
             koneksi.Close();
         }
-      
+
         private void refreshform()
         {
 
@@ -172,6 +154,5 @@ namespace DBHotel
             btnsave.Enabled = false;
             btnclear.Enabled = false;
         }
-
     }
 }

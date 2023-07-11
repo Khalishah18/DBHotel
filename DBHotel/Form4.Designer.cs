@@ -117,7 +117,6 @@
             this.label4.Size = new System.Drawing.Size(321, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Status Kamar";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -185,7 +184,6 @@
             this.btnclear.TabIndex = 5;
             this.btnclear.Text = "Clear";
             this.btnclear.UseVisualStyleBackColor = true;
-            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
             // 
             // btnsave
             // 
@@ -268,7 +266,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form4";
             this.Text = "Form4";
-            this.Load += new System.EventHandler(this.Form4_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
