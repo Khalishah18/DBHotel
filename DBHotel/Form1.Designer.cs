@@ -71,30 +71,35 @@
             this.dataStaffToolStripMenuItem.Name = "dataStaffToolStripMenuItem";
             this.dataStaffToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dataStaffToolStripMenuItem.Text = "Data Staff Hotel";
+            this.dataStaffToolStripMenuItem.Click += new System.EventHandler(this.dataStaffToolStripMenuItem_Click);
             // 
             // dataTamuHotelToolStripMenuItem
             // 
             this.dataTamuHotelToolStripMenuItem.Name = "dataTamuHotelToolStripMenuItem";
             this.dataTamuHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dataTamuHotelToolStripMenuItem.Text = "Data Tamu Hotel";
+            this.dataTamuHotelToolStripMenuItem.Click += new System.EventHandler(this.dataTamuHotelToolStripMenuItem_Click);
             // 
             // dataKamarHotelToolStripMenuItem
             // 
             this.dataKamarHotelToolStripMenuItem.Name = "dataKamarHotelToolStripMenuItem";
             this.dataKamarHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dataKamarHotelToolStripMenuItem.Text = "Data Kamar Hotel";
+            this.dataKamarHotelToolStripMenuItem.Click += new System.EventHandler(this.dataKamarHotelToolStripMenuItem_Click);
             // 
             // dataJasaHotelToolStripMenuItem
             // 
             this.dataJasaHotelToolStripMenuItem.Name = "dataJasaHotelToolStripMenuItem";
             this.dataJasaHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dataJasaHotelToolStripMenuItem.Text = "Data Jasa Hotel";
+            this.dataJasaHotelToolStripMenuItem.Click += new System.EventHandler(this.dataJasaHotelToolStripMenuItem_Click);
             // 
             // dataHotelToolStripMenuItem
             // 
             this.dataHotelToolStripMenuItem.Name = "dataHotelToolStripMenuItem";
             this.dataHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dataHotelToolStripMenuItem.Text = "Data Hotel";
+            this.dataHotelToolStripMenuItem.Click += new System.EventHandler(this.dataHotelToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -104,6 +109,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

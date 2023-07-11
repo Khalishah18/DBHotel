@@ -21,5 +21,46 @@ namespace DBHotel
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataStaffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 stf = new Form2();
+            stf.Show();
+            this.Hide();
+
+        }
+
+        private void dataTamuHotelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 tm = new Form3();
+            tm.Show();
+            this.Hide();
+        }
+
+        private void dataKamarHotelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 kmr = new Form4();
+            kmr.Show();
+            this.Hide();
+        }
+
+        private void dataJasaHotelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form5 js = new Form5();
+            js.Show();
+            this.Hide();
+        }
+
+        private void dataHotelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form6 htl = new Form6();
+            htl.Show();
+            this.Hide();
+        }
     }
 }
