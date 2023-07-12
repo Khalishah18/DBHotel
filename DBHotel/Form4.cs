@@ -16,6 +16,8 @@ namespace DBHotel
         private string stringConnection = "data source=LAPTOP-67G15PD7\\LISAA;" + "database=DBHotel; User ID = sa; Password = Lisa18062003";
         private SqlConnection koneksi;
 
+        BindingSource JasaBindingSource = new BindingSource();
+
         private void btnback_Click(object sender, EventArgs e)
         {
             Form1 hu = new Form1();
@@ -29,7 +31,6 @@ namespace DBHotel
 
         }
 
-        BindingSource customersBindingSource = new BindingSource();
         public Form4()
         {
             InitializeComponent();
@@ -72,10 +73,23 @@ namespace DBHotel
             txtSttsKmr.Enabled = true;
             txtfasilitaskmr.Text = "";
             txtfasilitaskmr.Enabled = true;
-            txtidtamu.Text = "";
-            txtidtamu.Enabled = true;
+            cmbidtamu.Enabled = true;
+            IdTamu();
             btnclear.Enabled = true;
             btnsave.Enabled = true;
+        }
+
+        private void IdTamu()
+        {
+            koneksi.Open();
+            string str = "select Id_Tamu from dbo.Tamu";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            koneksi.Close();
+            cmbidtamu.ValueMember = "Id_Tamu";
+            cmbidtamu.DataSource = ds.Tables[0];
         }
 
         private void btnsave_Click(object sender, EventArgs e)
@@ -84,7 +98,7 @@ namespace DBHotel
             string JenisKamar = txtjnskmr.Text;
             string Status_Kamar = txtSttsKmr.Text;
             string Fasilitas_Kamar = txtfasilitaskmr.Text;
-            string Id_Tamu = txtidtamu.Text;
+            string Id_Tamu = cmbidtamu.Text;
 
 
             if (IdKamar == "")
@@ -130,6 +144,8 @@ namespace DBHotel
 
         }
 
+
+
         private void dataGridView()
         {
             koneksi.Open();
@@ -148,9 +164,33 @@ namespace DBHotel
             txtjnskmr.Enabled = false;
             txtSttsKmr.Enabled = false;
             txtfasilitaskmr.Enabled = false;
-            txtidtamu.Enabled = false;
+            cmbidtamu.Enabled = false;
+            cmbidtamu.SelectedIndex = -1;
             btnsave.Enabled = false;
             btnclear.Enabled = false;
+            btnadd.Enabled = true;
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            koneksi.Open();
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("SELECT Id_Kamar, Jenis_Kamar, Status_Kamar, Fasilitas_Kamar, Id_Tamu FROM Kamar", koneksi));
+            DataSet ds = new DataSet();
+            dataAdapter1.Fill(ds);
+
+            this.JasaBindingSource.DataSource = ds.Tables[0];
+            this.txtIdKamar.DataBindings.Add(
+                new Binding("Text", this.JasaBindingSource, "Id_Kamar", true)); ;
+            this.txtjnskmr.DataBindings.Add(
+                new Binding("Text", this.JasaBindingSource, "Jenis_Kamar", true));
+            this.txtSttsKmr.DataBindings.Add(
+                new Binding("Text", this.JasaBindingSource, "Status_Kamar", true));
+            this.txtfasilitaskmr.DataBindings.Add(
+                new Binding("Text", this.JasaBindingSource, "Fasilitas_Kamar", true));
+            this.cmbidtamu.DataBindings.Add(
+                new Binding("Text", this.JasaBindingSource, "Id_Tamu", true));
+            koneksi.Close();
+            refreshform();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace DBHotel
 {
-    partial class btnBack
+    partial class Form5
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,6 @@
             this.txtIdJasa = new System.Windows.Forms.TextBox();
             this.txtNamaJasa = new System.Windows.Forms.TextBox();
             this.txtHrgJasa = new System.Windows.Forms.TextBox();
-            this.txtIdkmr = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.cmbidkmr = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtIdJasa, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtNamaJasa, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtHrgJasa, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtIdkmr, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cmbidkmr, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(136, 392);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -145,14 +145,6 @@
             this.txtHrgJasa.Name = "txtHrgJasa";
             this.txtHrgJasa.Size = new System.Drawing.Size(597, 22);
             this.txtHrgJasa.TabIndex = 7;
-            // 
-            // txtIdkmr
-            // 
-            this.txtIdkmr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdkmr.Location = new System.Drawing.Point(283, 148);
-            this.txtIdkmr.Name = "txtIdkmr";
-            this.txtIdkmr.Size = new System.Drawing.Size(597, 22);
-            this.txtIdkmr.TabIndex = 8;
             // 
             // dataGridView1
             // 
@@ -232,7 +224,17 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // btnBack
+            // cmbidkmr
+            // 
+            this.cmbidkmr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbidkmr.FormattingEnabled = true;
+            this.cmbidkmr.Location = new System.Drawing.Point(283, 147);
+            this.cmbidkmr.Name = "cmbidkmr";
+            this.cmbidkmr.Size = new System.Drawing.Size(597, 24);
+            this.cmbidkmr.TabIndex = 8;
+            this.cmbidkmr.SelectedIndexChanged += new System.EventHandler(this.cmbidkmr_SelectedIndexChanged);
+            // 
+            // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -247,9 +249,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
-            this.Name = "btnBack";
+            this.Name = "Form5";
             this.Text = "Form5";
-            this.Load += new System.EventHandler(this.btnBack_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -269,7 +270,6 @@
         private System.Windows.Forms.TextBox txtIdJasa;
         private System.Windows.Forms.TextBox txtNamaJasa;
         private System.Windows.Forms.TextBox txtHrgJasa;
-        private System.Windows.Forms.TextBox txtIdkmr;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btndelete;
@@ -277,5 +277,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ComboBox cmbidkmr;
     }
 }

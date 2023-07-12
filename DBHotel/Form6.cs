@@ -16,9 +16,11 @@ namespace DBHotel
         private string stringConnection = "data source=LAPTOP-67G15PD7\\LISAA;" + "database=DBHotel; User ID = sa; Password = Lisa18062003";
         private SqlConnection koneksi;
 
+        BindingSource HotelBindingSource = new BindingSource();
         public Form6()
         {
             InitializeComponent();
+            koneksi = new SqlConnection(stringConnection);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -115,6 +117,21 @@ namespace DBHotel
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            koneksi.Open();
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("SELECT Id_Hotel, Nama_Hotel, Alamat_Hotel, No_Telp FROM Hotel", koneksi));
+            DataSet ds = new DataSet();
+            dataAdapter1.Fill(ds);
+
+            this.HotelBindingSource.DataSource = ds.Tables[0];
+            this.txtidhtl.DataBindings.Add(
+                new Binding("Text", this.HotelBindingSource, "ID_Hotel", true)); ;
+            this.txtnmhtl.DataBindings.Add(
+                new Binding("Text", this.HotelBindingSource, "Nama_Hotel", true));
+            this.txtalmthtl.DataBindings.Add(
+                new Binding("Text", this.HotelBindingSource, "Alamat_Hotel", true));
+            this.txtnotelp.DataBindings.Add(
+                new Binding("Text", this.HotelBindingSource, "No_Telp", true));
+            koneksi.Close();
             refreshform();
 
         }

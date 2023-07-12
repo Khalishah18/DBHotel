@@ -15,15 +15,33 @@ namespace DBHotel
     {
         private string stringConnection = "data source=LAPTOP-67G15PD7\\LISAA;" + "database=DBHotel; User ID = sa; Password = Lisa18062003";
         private SqlConnection koneksi;
+
+        BindingSource StaffBindingSource = new BindingSource();
         public Form2()
         {
             InitializeComponent();
             koneksi = new SqlConnection(stringConnection);
-            refreshform();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            koneksi.Open();
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("SELECT Id_Staff,Nama_Staff,Posisi_Staff,No_Hp,Id_Hotel from Staff", koneksi));
+            DataSet ds = new DataSet();
+            dataAdapter1.Fill(ds);
+
+            this.StaffBindingSource.DataSource = ds.Tables[0];
+            this.txtIdStaff.DataBindings.Add(
+                new Binding("Text", this.StaffBindingSource, "Id_Staff", true)); ;
+            this.txtnmStaff.DataBindings.Add(
+                new Binding("Text", this.StaffBindingSource, "Nama_Staff", true));
+            this.txtPosisiStaff.DataBindings.Add(
+                new Binding("Text", this.StaffBindingSource, "Posisi_Staff", true));
+            this.txtNohpStaff.DataBindings.Add(
+                new Binding("Text", this.StaffBindingSource, "No_Hp", true));
+            this.cmbidhtl.DataBindings.Add(
+                new Binding("Text", this.StaffBindingSource, "Id_Hotel", true));
+            koneksi.Close();
             refreshform();
         }
 
@@ -52,10 +70,11 @@ namespace DBHotel
             txtPosisiStaff.Enabled = false;
             txtNohpStaff.Text = "";
             txtNohpStaff.Enabled = false;
-            txtidhtl.Text = "";
-            txtidhtl.Enabled = false;
+            cmbidhtl.Enabled = false;
+            cmbidhtl.SelectedIndex = -1;
             btnsave.Enabled = false;
             btnclear.Enabled = false;
+            btnadd.Enabled = true;
         }
 
         private void btnadd_Click(object sender, EventArgs e)
@@ -64,7 +83,8 @@ namespace DBHotel
             txtnmStaff.Enabled = true;
             txtPosisiStaff.Enabled = true;
             txtNohpStaff.Enabled = true;
-            txtidhtl.Enabled = true;
+            cmbidhtl.Enabled = true;
+            IdHotel();
             btnsave.Enabled = true;
             btnclear.Enabled = true;
         }
@@ -72,6 +92,19 @@ namespace DBHotel
         private void btnclear_Click(object sender, EventArgs e)
         {
             refreshform();
+        }
+
+        private void IdHotel()
+        {
+            koneksi.Open();
+            string str = "select Id_Hotel from dbo.Hotel";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            koneksi.Close();
+            cmbidhtl.ValueMember = "Id_Hotel";
+            cmbidhtl.DataSource = ds.Tables[0];
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -98,7 +131,7 @@ namespace DBHotel
             string nmstaff = txtnmStaff.Text;
             string posisistaff = txtPosisiStaff.Text;
             string nohpstaff = txtNohpStaff.Text;
-            string idhotel = txtidhtl.Text;
+            string idhotel = cmbidhtl.Text;
 
             if (idstaff == "")
             {
@@ -135,7 +168,7 @@ namespace DBHotel
                 cmd.Parameters.Add(new SqlParameter("@Nama_Staff", nmstaff));
                 cmd.Parameters.Add(new SqlParameter("@Posisi_Staff", posisistaff));
                 cmd.Parameters.Add(new SqlParameter("@No_Hp", nohpstaff));
-                cmd.Parameters.Add(new SqlParameter("@id_Hotel", idhotel));
+                cmd.Parameters.Add(new SqlParameter("@Id_Hotel", idhotel));
                 cmd.ExecuteNonQuery();
                 koneksi.Close();
                 MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -156,7 +189,7 @@ namespace DBHotel
                     koneksi.Open();
                     string str = "DELETE FROM dbo.Staff WHERE Nama_Staff = @Nama_Staff";
                     SqlCommand cmd = new SqlCommand(str, koneksi);
-                    cmd.Parameters.AddWithValue("@Nama_Hotel", Nama_Staff);
+                    cmd.Parameters.AddWithValue("@Nama_Staff", Nama_Staff);
                     cmd.ExecuteNonQuery();
                     koneksi.Close();
 

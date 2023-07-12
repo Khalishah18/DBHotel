@@ -11,20 +11,21 @@ using System.Windows.Forms;
 
 namespace DBHotel
 {
-    public partial class btnBack : Form
+    public partial class Form5 : Form
     {
+
         private string stringConnection = "data source=LAPTOP-67G15PD7\\LISAA;" + "database=DBHotel; User ID = sa; Password = Lisa18062003";
         private SqlConnection koneksi;
+
+        BindingSource JasaBindingSource = new BindingSource();
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            txtIdJasa.Text = "";
+            
             txtIdJasa.Enabled = true;
-            txtNamaJasa.Text = "";
             txtNamaJasa.Enabled = true;
-            txtHrgJasa.Text = "";
             txtHrgJasa.Enabled = true;
-            txtIdkmr.Text = "";
-            txtIdkmr.Enabled = true;
+            cmbidkmr.Enabled = true;
+            IdKamar();
             btnClear.Enabled = true;
             btnSave.Enabled = true;
         }
@@ -34,7 +35,7 @@ namespace DBHotel
             string IdJasa = txtIdJasa.Text;
             string NamaJasa = txtNamaJasa.Text;
             string HargaJasa = txtHrgJasa.Text;
-            string IdKamar = txtIdkmr.Text;
+            string IdKamar = cmbidkmr.Text;
 
             if (IdJasa == "")
             {
@@ -55,7 +56,7 @@ namespace DBHotel
             else
             {
                 koneksi.Open();
-                string str = "INSERT INTO Jasa(Id_Jasa, Nama_Jasa, Harga_Jasa, Id_Kamar) VALUES (@Id_Jasa, @Nama_Jasa, @Harga_Jasa, @Id_Kamar)";
+                string str = "INSERT INTO Jasa (Id_Jasa, Nama_Jasa, Harga_Jasa, Id_Kamar) VALUES (@Id_Jasa, @Nama_Jasa, @Harga_Jasa, @Id_Kamar)";
                 SqlCommand cmd = new SqlCommand(str, koneksi);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add(new SqlParameter("@Id_Jasa", IdJasa));
@@ -63,7 +64,6 @@ namespace DBHotel
                 cmd.Parameters.Add(new SqlParameter("@Harga_Jasa", HargaJasa));
                 cmd.Parameters.Add(new SqlParameter("@Id_Kamar", IdKamar));
                 cmd.ExecuteNonQuery();
-
                 koneksi.Close();
                 MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView();
@@ -71,9 +71,22 @@ namespace DBHotel
             }
         }
 
-        public btnBack()
+        private void IdKamar()
+        {
+            koneksi.Open();
+            string str = "select Id_Kamar from dbo.Kamar";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            koneksi.Close();
+            cmbidkmr.ValueMember = "Id_Kamar";
+            cmbidkmr.DataSource = ds.Tables[0];
+        }
+        public Form5()
         {
             InitializeComponent();
+            koneksi = new SqlConnection(stringConnection);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -125,9 +138,24 @@ namespace DBHotel
             }
         }
 
-        private void btnBack_Load(object sender, EventArgs e)
+        private void Form5_Load(object sender, EventArgs e)
         {
+            koneksi.Open();
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("SELECT Id_Jasa, Nama_Jasa, Harga_Jasa, Id_Kamar FROM Jasa", koneksi));
+            DataSet ds = new DataSet();
+            dataAdapter1.Fill(ds);
 
+            this.JasaBindingSource.DataSource = ds.Tables[0];
+            this.txtIdJasa.DataBindings.Add(
+                new Binding("Text", this.JasaBindingSource, "ID_Jasa", true)); ;
+            this.txtNamaJasa.DataBindings.Add(
+                new Binding("Text", this.JasaBindingSource, "Nama_Jasa", true));
+            this.txtHrgJasa.DataBindings.Add(
+                new Binding("Text", this.JasaBindingSource, "Harga_Jasa", true));
+            this.cmbidkmr.DataBindings.Add(
+                new Binding("Text", this.JasaBindingSource, "Id_Kamar", true));
+            koneksi.Close();
+            refreshform();
         }
         private void dataGridView()
         {
@@ -147,10 +175,16 @@ namespace DBHotel
             txtNamaJasa.Enabled = false;
             txtHrgJasa.Text = "";
             txtHrgJasa.Enabled = false;
-            txtIdkmr.Text = "";
-            txtIdkmr.Enabled = false;
+            cmbidkmr.Enabled = false;
+            cmbidkmr.SelectedIndex = -1;
             btnSave.Enabled = false;
             btnClear.Enabled = false;
+            btnAdd.Enabled = true;
+        }
+
+        private void cmbidkmr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,11 +35,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtIdKamar = new System.Windows.Forms.TextBox();
             this.txtfasilitaskmr = new System.Windows.Forms.TextBox();
             this.txtjnskmr = new System.Windows.Forms.TextBox();
             this.txtSttsKmr = new System.Windows.Forms.TextBox();
-            this.txtidtamu = new System.Windows.Forms.TextBox();
+            this.txtIdKamar = new System.Windows.Forms.TextBox();
+            this.cmbidtamu = new System.Windows.Forms.ComboBox();
             this.btnopen = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
             this.btnclear = new System.Windows.Forms.Button();
@@ -83,9 +83,9 @@
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtfasilitaskmr, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtjnskmr, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtidtamu, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtSttsKmr, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtIdKamar, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cmbidtamu, 1, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(211, 367);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -138,14 +138,6 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Id_Tamu";
             // 
-            // txtIdKamar
-            // 
-            this.txtIdKamar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIdKamar.Location = new System.Drawing.Point(294, 95);
-            this.txtIdKamar.Name = "txtIdKamar";
-            this.txtIdKamar.Size = new System.Drawing.Size(507, 22);
-            this.txtIdKamar.TabIndex = 6;
-            // 
             // txtfasilitaskmr
             // 
             this.txtfasilitaskmr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -172,14 +164,22 @@
             this.txtSttsKmr.Size = new System.Drawing.Size(507, 22);
             this.txtSttsKmr.TabIndex = 12;
             // 
-            // txtidtamu
+            // txtIdKamar
             // 
-            this.txtidtamu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtidtamu.Location = new System.Drawing.Point(294, 172);
-            this.txtidtamu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtidtamu.Name = "txtidtamu";
-            this.txtidtamu.Size = new System.Drawing.Size(507, 22);
-            this.txtidtamu.TabIndex = 13;
+            this.txtIdKamar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtIdKamar.Location = new System.Drawing.Point(294, 95);
+            this.txtIdKamar.Name = "txtIdKamar";
+            this.txtIdKamar.Size = new System.Drawing.Size(507, 22);
+            this.txtIdKamar.TabIndex = 6;
+            // 
+            // cmbidtamu
+            // 
+            this.cmbidtamu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbidtamu.FormattingEnabled = true;
+            this.cmbidtamu.Location = new System.Drawing.Point(294, 171);
+            this.cmbidtamu.Name = "cmbidtamu";
+            this.cmbidtamu.Size = new System.Drawing.Size(507, 24);
+            this.cmbidtamu.TabIndex = 13;
             // 
             // btnopen
             // 
@@ -274,6 +274,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form4";
             this.Text = "Form4";
+            this.Load += new System.EventHandler(this.Form4_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -302,6 +303,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtjnskmr;
         private System.Windows.Forms.TextBox txtSttsKmr;
-        private System.Windows.Forms.TextBox txtidtamu;
+        private System.Windows.Forms.ComboBox cmbidtamu;
     }
 }

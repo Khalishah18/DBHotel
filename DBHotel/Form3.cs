@@ -15,6 +15,8 @@ namespace DBHotel
     {
         private string stringConnection = "data source=LAPTOP-67G15PD7\\LISAA;" + "database=DBHotel; User ID = sa; Password = Lisa18062003";
         private SqlConnection koneksi;
+
+        BindingSource TamuBindingSource = new BindingSource();
         public Form3()
         {
             InitializeComponent();
@@ -45,10 +47,11 @@ namespace DBHotel
             txtalmt.Enabled = false;
             txtemail.Text = "";
             txtemail.Enabled = false;
-            txtidstaff.Text = "";
-            txtidstaff.Enabled = false;
+            cmbidstaff.Enabled = false;
+            cmbidstaff.SelectedIndex = -1;
             btnsave.Enabled = false;
             btnclear.Enabled = false;
+            btnadd.Enabled = true;
         }
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -67,9 +70,23 @@ namespace DBHotel
             txtnohp.Enabled = true;
             txtalmt.Enabled = true;
             txtemail.Enabled = true;
-            txtidstaff.Enabled = true;
+            cmbidstaff.Enabled = true;
+            IdStaff();
             btnsave.Enabled = true;
             btnclear.Enabled = true;
+        }
+
+        private void IdStaff()
+        {
+            koneksi.Open();
+            string str = "select Id_Staff from dbo.Staff";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            koneksi.Close();
+            cmbidstaff.ValueMember = "Id_Staff";
+            cmbidstaff.DataSource = ds.Tables[0];
         }
 
         private void btnsave_Click(object sender, EventArgs e)
@@ -79,7 +96,7 @@ namespace DBHotel
             string nohp = txtnohp.Text;
             string almt = txtalmt.Text;
             string email = txtemail.Text;
-            string idstaff = txtidstaff.Text;
+            string idstaff = cmbidstaff.Text;
 
             if (idtamu == "")
             {
@@ -159,9 +176,9 @@ namespace DBHotel
                     string Nama_Tamu = dataGridView1.SelectedRows[0].Cells["Nama_Tamu"].Value.ToString();
 
                     koneksi.Open();
-                    string str = "DELETE FROM dbo.Hotel WHERE Nama_Tamu = @Nama_Tamu";
+                    string str = "DELETE FROM dbo.Tamu WHERE Nama_Tamu = @Nama_Tamu";
                     SqlCommand cmd = new SqlCommand(str, koneksi);
-                    cmd.Parameters.AddWithValue("@Nama_Hotel", Nama_Tamu);
+                    cmd.Parameters.AddWithValue("@Nama_Tamu", Nama_Tamu);
                     cmd.ExecuteNonQuery();
                     koneksi.Close();
 
