@@ -131,7 +131,7 @@ namespace DBHotel
             else
             {
                 koneksi.Open();
-                string str = "INSERT INTO Tamu (Id_Tamu,Nama_Tamu,No_Hp,Alamat,Email,Id_Staff) VALUES (@Id_Tamu,@Nama_Tamu,@No_Hp,@Alamat,@Email,@Id_Staff)";
+                string str = "INSERT INTO Tamu (Id_Tamu, Nama_Tamu, No_Hp, Alamat, Email, Id_Staff) VALUES (@Id_Tamu, @Nama_Tamu, @No_Hp, @Alamat, @Email, @Id_Staff)";
                 SqlCommand cmd = new SqlCommand(str, koneksi);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add(new SqlParameter("@Id_Tamu", idtamu));

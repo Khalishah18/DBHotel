@@ -39,7 +39,7 @@ namespace DBHotel
 
             if (IdJasa == "")
             {
-                MessageBox.Show("Masukkan Id Jasa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Masukkan ID Jasa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             if (NamaJasa == "")
             {
@@ -51,7 +51,7 @@ namespace DBHotel
             }
             if (IdKamar == "")
             {
-                MessageBox.Show("Masukkan Id Kamar", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Masukkan ID Kamar", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -60,7 +60,7 @@ namespace DBHotel
                 SqlCommand cmd = new SqlCommand(str, koneksi);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add(new SqlParameter("@Id_Jasa", IdJasa));
-                cmd.Parameters.Add(new SqlParameter(" @Nama_Jasa", NamaJasa));
+                cmd.Parameters.Add(new SqlParameter("@Nama_Jasa", NamaJasa));
                 cmd.Parameters.Add(new SqlParameter("@Harga_Jasa", HargaJasa));
                 cmd.Parameters.Add(new SqlParameter("@Id_Kamar", IdKamar));
                 cmd.ExecuteNonQuery();
