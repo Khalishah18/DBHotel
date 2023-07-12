@@ -74,35 +74,35 @@
             // dataStaffToolStripMenuItem
             // 
             this.dataStaffToolStripMenuItem.Name = "dataStaffToolStripMenuItem";
-            this.dataStaffToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataStaffToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.dataStaffToolStripMenuItem.Text = "Data Staff Hotel";
             this.dataStaffToolStripMenuItem.Click += new System.EventHandler(this.dataStaffToolStripMenuItem_Click);
             // 
             // dataTamuHotelToolStripMenuItem
             // 
             this.dataTamuHotelToolStripMenuItem.Name = "dataTamuHotelToolStripMenuItem";
-            this.dataTamuHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataTamuHotelToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.dataTamuHotelToolStripMenuItem.Text = "Data Tamu Hotel";
             this.dataTamuHotelToolStripMenuItem.Click += new System.EventHandler(this.dataTamuHotelToolStripMenuItem_Click);
             // 
             // dataKamarHotelToolStripMenuItem
             // 
             this.dataKamarHotelToolStripMenuItem.Name = "dataKamarHotelToolStripMenuItem";
-            this.dataKamarHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataKamarHotelToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.dataKamarHotelToolStripMenuItem.Text = "Data Kamar Hotel";
             this.dataKamarHotelToolStripMenuItem.Click += new System.EventHandler(this.dataKamarHotelToolStripMenuItem_Click);
             // 
             // dataJasaHotelToolStripMenuItem
             // 
             this.dataJasaHotelToolStripMenuItem.Name = "dataJasaHotelToolStripMenuItem";
-            this.dataJasaHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataJasaHotelToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.dataJasaHotelToolStripMenuItem.Text = "Data Jasa Hotel";
             this.dataJasaHotelToolStripMenuItem.Click += new System.EventHandler(this.dataJasaHotelToolStripMenuItem_Click);
             // 
             // dataHotelToolStripMenuItem
             // 
             this.dataHotelToolStripMenuItem.Name = "dataHotelToolStripMenuItem";
-            this.dataHotelToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataHotelToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.dataHotelToolStripMenuItem.Text = "Data Hotel";
             this.dataHotelToolStripMenuItem.Click += new System.EventHandler(this.dataHotelToolStripMenuItem_Click);
             // 
@@ -115,6 +115,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(1259, 678);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -122,7 +123,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(415, 125);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 52);
+            this.label1.Size = new System.Drawing.Size(333, 51);
             this.label1.TabIndex = 3;
             this.label1.Text = "Database Hotel";
             // 
